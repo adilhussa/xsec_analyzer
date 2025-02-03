@@ -1,0 +1,8 @@
+UnivFile /exp/uboone/data/users/gardiner/ntuples-xsec-ana-tutorial-umn/universes-TutorialCC1mu.root
+SystFile configs/systcalc.conf
+#FPFile configs/file_properties.txt
+Unfold WienerSVD 1 second-deriv
+#Unfold DAgostini fm 0.025
+Prediction uBTune "MicroBooNE Tune" univ CV
+#Prediction FakeData "Fake data" univ FakeData
+#Prediction gv2 "GENIE 2.12.10" file /exp/uboone/app/users/gardiner/temp-gen/BuildEventGenerators/ubmc/comp-all/comp-gv2.root MicroBooNE_CC1MuNp_XSec_2D_PpCosp_nu_MC
