@@ -294,7 +294,7 @@ bool CC1mu1cohpi::Selection(AnalysisEvent* Event) {
     }
     
     if (count == 2){
-        
+        sel_has_twotracks_ = true;
         for ( int p = 0; p < Event->num_pf_particles_; ++p ){
             // Only check direct neutrino daughters (generation == 2)
             unsigned int generation = Event->pfp_generation_->at( p );
@@ -314,7 +314,8 @@ bool CC1mu1cohpi::Selection(AnalysisEvent* Event) {
             float x_end = Event->track_endx_->at( p );
             float y_end = Event->track_endy_->at( p );
             float z_end = Event->track_endz_->at( p );
-            bool TrackEndContainment = point_inside_FV(ReturnRecoFV(),x_end,y_end,z_end);
+            //bool TrackEndContainment = point_inside_FV(ReturnRecoFV(),x_end,y_end,z_end);
+            bool TrackEndContainment = (x_end > 10.0 && x_end < 246.35 && y_end > -106.5 && y_end < 106.5 && z_end > 10.0);
             if (!TrackEndContainment) continue;
             fv_end_passed++;
             
@@ -740,6 +741,7 @@ void CC1mu1cohpi::DefineOutputBranches() {
     
     SetBranch(&sel_cosmic_ip_cut_passed_,"sel_cosmic_ip_cut_passed",kBool);
     SetBranch(&sel_topo_cut_passed_, "sel_topo_cut_passed", kBool);
+    SetBranch(&sel_has_twotracks_, "sel_has_twotracks", kBool);
     SetBranch(&sel_strt_contained_, "sel_strt_contained",  kBool);
     SetBranch(&sel_end_contained_, "sel_end_contained", kBool);
     SetBranch(&sel_passed_trkscore_, "sel_passed_trkscore",  kBool);

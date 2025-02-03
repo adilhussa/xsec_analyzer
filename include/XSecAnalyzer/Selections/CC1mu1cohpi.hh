@@ -65,6 +65,7 @@ private:
     float scndlongesttrk_angle_ = BOGUS;
     float tot_energy_ = BOGUS;
     float particle_ids_ = BOGUS;
+    bool sel_has_twotracks_ = false;
     
   bool sig_truevertex_in_fv_;
   bool sig_ccnc_;
