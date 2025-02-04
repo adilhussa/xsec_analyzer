@@ -57,8 +57,10 @@ private:
     bool sel_has_passed_planeangle_ = false;
     bool sel_passed_momtrnsfer_ = false;
     double theta_mu_pi_ = BOGUS;
-    double theta_mupi_ = BOGUS;
-    double coneangle_ = BOGUS;
+    double true_theta_mupi_ = BOGUS;
+    double reco_theta_mupi_ = BOGUS;
+    double true_coneangle_ = BOGUS;
+    double reco_coneangle_ = BOGUS;
     double planeangle_ = BOGUS;
     double momtrnsfer_ = BOGUS;
     double longesttrk_angle_ = BOGUS;

@@ -385,6 +385,33 @@ bool CC1mu1cohpi::Selection(AnalysisEvent* Event) {
     
     
     if (sel_ntrack_eq_2_){
+        //------------------------true quantites-----------------------------
+        TVector3 muon_mom(0, 0, 0);
+        TVector3 pion_mom(0, 0, 0);
+        TVector3 beam_dir(0, 0, 1);
+        for (size_t p = 0u; p < Event->mc_nu_daughter_pdg_->size(); ++p) {
+            int pdg = Event->mc_nu_daughter_pdg_->at(p);
+            float px = Event->mc_nu_daughter_px_->at(p);
+            float py = Event->mc_nu_daughter_py_->at(p);
+            float pz = Event->mc_nu_daughter_pz_->at(p);
+
+            if (abs(pdg) == MUON) {
+                muon_mom.SetXYZ(px, py, pz);
+            } else if (abs(pdg) == PI_PLUS) {
+                pion_mom.SetXYZ(px, py, pz);
+            }
+        }
+
+        TVector3 muon_unit(0, 0, 0);
+        TVector3 pion_unit(0, 0, 0);
+
+        if (muon_mom.Mag() > 0) muon_unit = muon_mom.Unit();
+        if (pion_mom.Mag() > 0) pion_unit = pion_mom.Unit();
+        true_theta_mupi_ = cos(muon_unit.Angle(pion_unit));
+        TVector3 res_vec = muon_unit + pion_unit;
+        true_coneangle_ = cos(res_vec.Angle(beam_dir));
+        std::cout<< "True coneangle: "<< true_coneangle_ <<std::endl;
+        //------------------------Reco quantities--------------------------------
         TVector3 v1(Event->track_dirx_->at(mu_idx), Event->track_diry_->at(mu_idx), Event->track_dirz_->at(mu_idx));
         TVector3 v2(Event->track_dirx_->at(pi_idx), Event->track_diry_->at(pi_idx), Event->track_dirz_->at(pi_idx));
         TVector3 z(0, 0, 1);  // Incoming neutrino direction along z-axis
@@ -408,12 +435,13 @@ bool CC1mu1cohpi::Selection(AnalysisEvent* Event) {
        // if (planeangle_ < 30 || planeangle_ > 150) sel_has_passed_planeangle_ = true;
         if (planeangle_ > 90) sel_has_passed_planeangle_ = true;
         TVector3 v3 = v1 + v2;
-        theta_mupi_ = cos(v1.Angle(v2));
-        if (theta_mupi_ > 0.42262 )  sel_passed_opnangle_ = true;
+        reco_theta_mupi_ = cos(v1.Angle(v2));
+        if (reco_theta_mupi_ > 0.42262 )  sel_passed_opnangle_ = true;
  
-        coneangle_ = cos(v3.Angle(z));
-        if (coneangle_ > 0.9397) sel_passed_coneangle_ = true;
-        //std::cout << "Cone Angle: "<< coneangle_ <<std::endl;
+        reco_coneangle_ = cos(v3.Angle(z));
+        if (reco_coneangle_ > 0.9397) sel_passed_coneangle_ = true;
+        
+        std::cout << "Reco coneangle: "<< reco_coneangle_ <<std::endl;
         longesttrk_angle_ = cos(v1.Angle(z));
         scndlongesttrk_angle_ = cos(v2.Angle(z));
         
@@ -440,10 +468,10 @@ bool CC1mu1cohpi::Selection(AnalysisEvent* Event) {
         if (momtrnsfer_ <= 0.05 ) sel_passed_momtrnsfer_ = true;
         
         tot_energy_ = Trk1Energy + Trk2Energy;
-        /*theta_mupi_ = v1.Angle(v2)*(180/3.14159);
-        if (theta_mupi_ < 55.0)  sel_passed_opnangle_ = true;
-        coneangle_ = abs(v3.Angle(z)*(180/3.14159));
-        if (coneangle_ < 20) sel_passed_coneangle_ = true;*/
+        /*reco_theta_mupi_ = v1.Angle(v2)*(180/3.14159);
+        if (reco_theta_mupi_ < 55.0)  sel_passed_opnangle_ = true;
+        reco_coneangle_ = abs(v3.Angle(z)*(180/3.14159));
+        if (reco_coneangle_ < 20) sel_passed_coneangle_ = true;*/
         
        // std::cout << mu_idx <<"   :    "<<pi_idx<<std::endl;
         if(Event->is_mc_){
@@ -755,11 +783,13 @@ void CC1mu1cohpi::DefineOutputBranches() {
     SetBranch(&sel_passed_coneangle_, "sel_passed_coneangle", kBool);
     SetBranch(&sel_has_passed_planeangle_, "sel_has_passed_planeangle", kBool);
     SetBranch(&sel_passed_momtrnsfer_, "sel_passed_momtrnsfer", kBool);
-    SetBranch(&coneangle_, "coneangle", kDouble);
-    SetBranch(&theta_mupi_, "theta_mupi", kDouble);
+    SetBranch(&reco_coneangle_, "reco_coneangle", kDouble);
+    SetBranch(&reco_theta_mupi_, "reco_theta_mupi", kDouble);
     SetBranch(&planeangle_, "planeangle", kDouble);
     SetBranch(&momtrnsfer_, "momtrnsfer", kDouble);
     SetBranch(&particle_ids_, "particle_ids", kDouble);
+    SetBranch(&true_coneangle_, "true_coneangle", kDouble);
+    SetBranch(&true_theta_mupi_, "true_theta_mupi", kDouble);
 }
 
 
