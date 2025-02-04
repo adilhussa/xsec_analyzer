@@ -413,6 +413,7 @@ bool CC1mu1cohpi::Selection(AnalysisEvent* Event) {
  
         coneangle_ = cos(v3.Angle(z));
         if (coneangle_ > 0.9397) sel_passed_coneangle_ = true;
+        //std::cout << "Cone Angle: "<< coneangle_ <<std::endl;
         longesttrk_angle_ = cos(v1.Angle(z));
         scndlongesttrk_angle_ = cos(v2.Angle(z));
         
@@ -754,6 +755,11 @@ void CC1mu1cohpi::DefineOutputBranches() {
     SetBranch(&sel_passed_coneangle_, "sel_passed_coneangle", kBool);
     SetBranch(&sel_has_passed_planeangle_, "sel_has_passed_planeangle", kBool);
     SetBranch(&sel_passed_momtrnsfer_, "sel_passed_momtrnsfer", kBool);
+    SetBranch(&coneangle_, "coneangle", kDouble);
+    SetBranch(&theta_mupi_, "theta_mupi", kDouble);
+    SetBranch(&planeangle_, "planeangle", kDouble);
+    SetBranch(&momtrnsfer_, "momtrnsfer", kDouble);
+    SetBranch(&particle_ids_, "particle_ids", kDouble);
 }
 
 

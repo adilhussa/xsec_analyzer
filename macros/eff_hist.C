@@ -8,16 +8,10 @@
 //" && sel_has_p_candidate && sel_passed_proton_pid_cut"
 //" && sel_protons_contained ";
 
-const std::string signal_cuts = "mc_vertex_in_FV && mc_neutrino_is_numu"
-  " && mc_no_fs_mesons && Sum$( mc_pdg == 13 ) == 1"
-  " && Sum$( mc_pdg == 2212 ) > 0";
+const std::string signal_cuts = "CC1mu1cohpi_sig_truevertex_in_fv && CC1mu1cohpi_sig_ccnc && CC1mu1cohpi_sig_is_numu && CC1mu1cohpi_sig_one_muon_above_thresh && CC1mu1cohpi_sig_one_pion && CC1mu1cohpi_sig_no_proton_above_thresh && CC1mu1cohpi_sig_no_heavy_mesons";
   //" && mc_muon_in_mom_range && mc_lead_p_in_mom_range"
 
-const std::string selection_cuts = "sel_nu_mu_cc && sel_muon_contained"
-  " && sel_muon_quality_ok"
-  //" && sel_muon_passed_mom_cuts && sel_lead_p_passed_mom_cuts"
-  " && sel_no_reco_showers && sel_has_p_candidate && sel_protons_contained "
-  " && sel_passed_proton_pid_cut";
+const std::string selection_cuts = "CC1mu1cohpi_nuvertex_contained_ && CC1mu1cohpi_sel_topo_cut_passed && CC1mu1cohpi_sel_cosmic_ip_cut_passed && CC1mu1cohpi_sel_strt_contained && CC1mu1cohpi_sel_end_contained && CC1mu1cohpi_sel_passed_trkscore && CC1mu1cohpi_sel_passed_vrtx_dist &&  CC1mu1cohpi_sel_passed_dedx && CC1mu1cohpi_sel_passed_llrpid && CC1mu1cohpi_sel_passed_lngth";
 
 void plot_eff_hist( TTree& stv_tree, const std::string& branch,
   const std::string& variable_name, const std::string& hist_name,
@@ -71,14 +65,14 @@ void plot_eff_hist( TTree& stv_tree, const std::string& branch,
   }
 
   TCanvas* c1 = new TCanvas;
-  eff_hist->SetStats( false );
-  eff_hist->GetYaxis()->SetRangeUser( 0., 1. );
+  eff_hist->SetStats( true );
+  eff_hist->GetYaxis()->SetRangeUser( 0., 2. );
 
   c1->SetBottomMargin(0.15);
 
   eff_hist->SetLineWidth(4);
   eff_hist->SetLineColor(kBlack);
-  eff_hist->GetYaxis()->SetRangeUser(0., 1.);
+  eff_hist->GetYaxis()->SetRangeUser(0., 2.);
   eff_hist->GetYaxis()->CenterTitle(true);
   eff_hist->GetYaxis()->SetTitleOffset(0.95);
   eff_hist->GetYaxis()->SetTitleSize(0.05);
@@ -87,7 +81,7 @@ void plot_eff_hist( TTree& stv_tree, const std::string& branch,
   eff_hist->GetXaxis()->CenterTitle(true);
   eff_hist->GetXaxis()->SetTitleSize(0.05);
 
-  eff_hist->SetStats( false );
+  eff_hist->SetStats( true );
   eff_hist->Draw( );
 
   //c1->SaveAs( ( "eff_hist_" + hist_name + ".jpg").c_str() );
@@ -97,16 +91,17 @@ void plot_eff_hist( TTree& stv_tree, const std::string& branch,
 void eff_hist() {
 
   TChain stv_ch( "stv_tree" );
-  stv_ch.Add( "/uboone/data/users/gardiner/ntuples-stv/stv-prodgenie_bnb_nu_uboone_overlay_mcc9.1_v08_00_00_26_filter_run1_reco2_reco2.root" );
-  stv_ch.Add( "/uboone/data/users/gardiner/ntuples-stv/stv-prodgenie_bnb_nu_uboone_overlay_mcc9.1_v08_00_00_26_filter_run2_reco2_D1D2_reco2.root" );
-  stv_ch.Add( "/uboone/data/users/gardiner/ntuples-stv/stv-prodgenie_bnb_nu_uboone_overlay_mcc9.1_v08_00_00_26_filter_run3_reco2_G_reco2.root" );
+    stv_ch.Add( "/exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/test4.root");
+  //stv_ch.Add( "/uboone/data/users/gardiner/ntuples-stv/stv-prodgenie_bnb_nu_uboone_overlay_mcc9.1_v08_00_00_26_filter_run1_reco2_reco2.root" );
+  //stv_ch.Add( "/uboone/data/users/gardiner/ntuples-stv/stv-prodgenie_bnb_nu_uboone_overlay_mcc9.1_v08_00_00_26_filter_run2_reco2_D1D2_reco2.root" );
+  //stv_ch.Add( "/uboone/data/users/gardiner/ntuples-stv/stv-prodgenie_bnb_nu_uboone_overlay_mcc9.1_v08_00_00_26_filter_run3_reco2_G_reco2.root" );
 
   //// Fake data samples (NuWro)
   //stv_ch.Add( "/uboone/data/users/gardiner/ntuples-stv/stv-high_stat_prodgenie_bnb_nu_overlay_DetVar_Run1_NuWro_reco2_reco2.root" );
   //stv_ch.Add( "/uboone/data/users/gardiner/ntuples-stv/stv-high_stat_prodgenie_bnb_nu_overlay_DetVar_Run2_NuWro_reco2_reco2.root" );
   //stv_ch.Add( "/uboone/data/users/gardiner/ntuples-stv/stv-high_stat_prodgenie_bnb_nu_overlay_DetVar_Run3_NuWro_reco2_reco2.root" );
 
- plot_eff_hist( stv_ch, "mc_p3_mu.Mag()", "p_{#mu}^{true}", "pmutrue", "GeV", 80, 0., 2.);
+ plot_eff_hist( stv_ch, "CC1mu1cohpi_coneangle", "cos(cone angle)", "coneangle", "GeV", 80, 0., 1.);
 
  //plot_eff_hist( stv_ch, "mc_p3_lead_p.Mag()", "p_{p}^{true}", "pptrue", "GeV", 80, 0., 1.2 );
 

@@ -20,12 +20,12 @@ class CC1mu1cohpi : public SelectionBase {
   void DefineCategoryMap();
 
 private:
-  bool sel_nslice_eq_1_;
+  bool sel_nslice_eq_1_ = false;
   bool sel_nshower_eq_0_;
-  bool sel_ntrack_eq_2_;
+  bool sel_ntrack_eq_2_ = false;
  // bool sel_muoncandidate_tracklike_;
  // bool sel_protoncandidate_tracklike_;
-  bool sel_nuvertex_contained_;
+  bool sel_nuvertex_contained_ = false;
   bool sel_muoncandidate_above_p_thresh;
   bool sel_protoncandidate_above_p_thresh;
   bool sel_muoncandidate_contained;
@@ -56,15 +56,15 @@ private:
     bool sel_passed_coneangle_ = false;
     bool sel_has_passed_planeangle_ = false;
     bool sel_passed_momtrnsfer_ = false;
-    float theta_mu_pi_ = BOGUS;
-    float theta_mupi_ = BOGUS;
-    float coneangle_ = BOGUS;
-    float planeangle_ = BOGUS;
-    float momtrnsfer_ = BOGUS;
-    float longesttrk_angle_ = BOGUS;
-    float scndlongesttrk_angle_ = BOGUS;
-    float tot_energy_ = BOGUS;
-    float particle_ids_ = BOGUS;
+    double theta_mu_pi_ = BOGUS;
+    double theta_mupi_ = BOGUS;
+    double coneangle_ = BOGUS;
+    double planeangle_ = BOGUS;
+    double momtrnsfer_ = BOGUS;
+    double longesttrk_angle_ = BOGUS;
+    double scndlongesttrk_angle_ = BOGUS;
+    double tot_energy_ = BOGUS;
+    double particle_ids_ = BOGUS;
     bool sel_has_twotracks_ = false;
     
   bool sig_truevertex_in_fv_;
