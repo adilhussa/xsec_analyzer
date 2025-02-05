@@ -397,9 +397,9 @@ bool CC1mu1cohpi::Selection(AnalysisEvent* Event) {
 
             if (abs(pdg) == MUON) {
                 muon_mom.SetXYZ(px, py, pz);
-            } else if (abs(pdg) == PI_PLUS) {
+            } else if (abs(pdg) == PI_PLUS || abs(pdg) == PROTON) {
                 pion_mom.SetXYZ(px, py, pz);
-            }
+            } //else std::cout<< "pdg id: " <<pdg<<std::endl;
         }
 
         TVector3 muon_unit(0, 0, 0);
@@ -407,10 +407,12 @@ bool CC1mu1cohpi::Selection(AnalysisEvent* Event) {
 
         if (muon_mom.Mag() > 0) muon_unit = muon_mom.Unit();
         if (pion_mom.Mag() > 0) pion_unit = pion_mom.Unit();
-        true_theta_mupi_ = cos(muon_unit.Angle(pion_unit));
-        TVector3 res_vec = muon_unit + pion_unit;
-        true_coneangle_ = cos(res_vec.Angle(beam_dir));
-        std::cout<< "True coneangle: "<< true_coneangle_ <<std::endl;
+        if(muon_mom.Mag() > 0 && pion_mom.Mag() > 0){
+            true_theta_mupi_ = cos(muon_unit.Angle(pion_unit));
+            TVector3 res_vec = muon_unit + pion_unit;
+            true_coneangle_ = cos(res_vec.Angle(beam_dir));
+            //std::cout<< "True coneangle: "<< true_coneangle_ <<std::endl;
+        } //else std::cout<< "###############################" <<std::endl;
         //------------------------Reco quantities--------------------------------
         TVector3 v1(Event->track_dirx_->at(mu_idx), Event->track_diry_->at(mu_idx), Event->track_dirz_->at(mu_idx));
         TVector3 v2(Event->track_dirx_->at(pi_idx), Event->track_diry_->at(pi_idx), Event->track_dirz_->at(pi_idx));
@@ -441,7 +443,7 @@ bool CC1mu1cohpi::Selection(AnalysisEvent* Event) {
         reco_coneangle_ = cos(v3.Angle(z));
         if (reco_coneangle_ > 0.9397) sel_passed_coneangle_ = true;
         
-        std::cout << "Reco coneangle: "<< reco_coneangle_ <<std::endl;
+        //std::cout << "Reco coneangle: "<< reco_coneangle_ <<std::endl;
         longesttrk_angle_ = cos(v1.Angle(z));
         scndlongesttrk_angle_ = cos(v2.Angle(z));
         

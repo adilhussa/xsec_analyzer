@@ -36,7 +36,8 @@ class MakeConfig {
     //
     // Full dataset for Runs 1-3
     static constexpr double EXPECTED_POT = 6.790e20;
-
+    //run3 data only
+    //static constexpr double EXPECTED_POT = 2.57e20;
     // Number of true bins to use when plotting true distributions in a given
     // reco bin
     static constexpr int DEFAULT_TRUE_BINS = 100;
