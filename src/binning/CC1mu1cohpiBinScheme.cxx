@@ -11,7 +11,7 @@ void CC1mu1cohpiBinScheme::DefineBlocks() {
   ntuple_ttree_name_ = "stv_tree";
 
   // Run numbers to use when plotting migration matrices
-  runs_to_use_ = { 1 };
+  runs_to_use_ = { 3 };
 
   // Prefix for the output bin and slice configuration text files
   out_config_prefix_ = "CC1mu1cohpi_";

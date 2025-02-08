@@ -1,0 +1,43 @@
+# All beam-on data (slimmed only with nslice == 1 requirement)
+#/uboone/data/users/davidc/searchingfornues/v08_00_00_41/cc0pinp/0617/nslice/run1_neutrinoselection_filt_numu_ALL.root
+#/uboone/data/users/davidc/searchingfornues/v08_00_00_41/cc0pinp/0617/nslice/run2_neutrinoselection_filt_numu_ALL.root
+#/uboone/data/users/davidc/searchingfornues/v08_00_00_41/cc0pinp/0617/nslice/run3_neutrinoselection_filt_numu_ALL.root
+
+# Run 1 open and beam-off data
+# Run 2 beam-off data
+
+# Run 3 open and beam-off data
+ProcessNTuples /pnfs/uboone/persistent/users/cthorpe/PELEE_2023/run3/beamon_pelee_ntuple_opendata_run3_1e19_ana.root CC1mu1cohpi /exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_beamon_pelee_ntuple_opendata_run3_1e19_ana.root
+ProcessNTuples /pnfs/uboone/persistent/users/cthorpe/PELEE_2023/run3/bnb_beam_off_peleeTuple_uboone_v08_00_00_70_run3.root CC1mu1cohpi /exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_beam_off_peleeTuple_uboone_v08_00_00_70_run3.root
+
+# Run 1 CV MC
+
+# Run 2 CV MC
+
+# Run 3 CV MC
+ProcessNTuples /pnfs/uboone/persistent/users/cthorpe/PELEE_2023/run3/overlay_peleeTuple_uboone_v08_00_00_70_run3_nu.root CC1mu1cohpi /exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_peleeTuple_uboone_v08_00_00_70_run3_nu.root
+ProcessNTuples /pnfs/uboone/persistent/users/cthorpe/PELEE_2023/run3/overlay_peleeTuple_uboone_v08_00_00_70_run3_nue.root CC1mu1cohpi /exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_peleeTuple_uboone_v08_00_00_70_run3_nue.root
+ProcessNTuples /pnfs/uboone/persistent/users/cthorpe/PELEE_2023/run3/overlay_peleeTuple_uboone_v08_00_00_70_run3_dirt.root CC1mu1cohpi /exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_peleeTuple_uboone_v08_00_00_70_run3_dirt.root
+
+
+# NuWro MC
+#/uboone/data/users/apapadop/searchingfornues/high_stat_prodgenie_bnb_nu_overlay_DetVar_Run1_NuWro_reco2_reco2.root
+#/uboone/data/users/apapadop/searchingfornues/high_stat_prodgenie_bnb_nu_overlay_DetVar_Run2_NuWro_reco2_reco2.root
+#/uboone/data/users/apapadop/searchingfornues/high_stat_prodgenie_bnb_nu_overlay_DetVar_Run3_NuWro_reco2_reco2.root
+
+# Run 1 high-stats detVar
+
+
+# Run 3 high-stats detVar
+ProcessNTuples /pnfs/uboone/persistent/users/cthorpe/PELEE_2023/run3_detvar/overlay_pelee_ntuples_bnb_nu_detvar_run3_CV_reprocess_ana.root CC1mu1cohpi /exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_CV_reprocess_ana.root
+ProcessNTuples /pnfs/uboone/persistent/users/cthorpe/PELEE_2023/run3_detvar/overlay_pelee_ntuples_bnb_nu_detvar_run3_CVExtra_reprocess_ana.root CC1mu1cohpi /exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_CVExtra_reprocess_ana.root
+ProcessNTuples /pnfs/uboone/persistent/users/cthorpe/PELEE_2023/run3_detvar/overlay_pelee_ntuples_bnb_nu_detvar_run3_LYDown_reprocess_ana.root CC1mu1cohpi /exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_LYDown_reprocess_ana.root
+ProcessNTuples /pnfs/uboone/persistent/users/cthorpe/PELEE_2023/run3_detvar/overlay_pelee_ntuples_bnb_nu_detvar_run3_LYRayleigh_reprocess_ana.root CC1mu1cohpi /exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_LYRayleigh_reprocess_ana.root
+ProcessNTuples /pnfs/uboone/persistent/users/cthorpe/PELEE_2023/run3_detvar/overlay_pelee_ntuples_bnb_nu_detvar_run3_LYAttenuation_reprocess_ana.root CC1mu1cohpi /exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_LYAttenuation_reprocess_ana.root
+ProcessNTuples /pnfs/uboone/persistent/users/cthorpe/PELEE_2023/run3_detvar/overlay_pelee_ntuples_bnb_nu_detvar_run3_SCE_reprocess_ana.root CC1mu1cohpi /exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_SCE_reprocess_ana.root
+ProcessNTuples /pnfs/uboone/persistent/users/cthorpe/PELEE_2023/run3_detvar/overlay_pelee_ntuples_bnb_nu_detvar_run3_Recomb2_reprocess_ana.root CC1mu1cohpi /exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_Recomb2_reprocess_ana.root
+ProcessNTuples /pnfs/uboone/persistent/users/cthorpe/PELEE_2023/run3_detvar/overlay_pelee_ntuples_bnb_nu_detvar_run3_WireModX_reprocess_ana.root CC1mu1cohpi /exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_WireModX_reprocess_ana.root
+ProcessNTuples /pnfs/uboone/persistent/users/cthorpe/PELEE_2023/run3_detvar/overlay_pelee_ntuples_bnb_nu_detvar_run3_WireModYZ_reprocess_ana.root CC1mu1cohpi /exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_WireModYZ_reprocess_ana.root
+ProcessNTuples /pnfs/uboone/persistent/users/cthorpe/PELEE_2023/run3_detvar/overlay_pelee_ntuples_bnb_nu_detvar_run3_WireModThetaXZ_reprocess_ana.root CC1mu1cohpi /exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_WireModThetaXZ_reprocess_ana.root
+ProcessNTuples /pnfs/uboone/persistent/users/cthorpe/PELEE_2023/run3_detvar/overlay_pelee_ntuples_bnb_nu_detvar_run3_WireModThetaYZ_reprocess_ana.root CC1mu1cohpi /exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_WireModThetaYZ_reprocess_ana.root
+

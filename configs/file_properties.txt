@@ -1,26 +1,25 @@
 # Run 1 BNB on-beam data: run onBNB #triggers POT
-/exp/uboone/data/users/gardiner/ntuples-xsec-ana-tutorial-umn/xsec-ana-run1_neutrinoselection_filt_numu_ALL.root 1 onBNB 36139233 1.62e20
+/exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_beamon_pelee_ntuple_opendata_run3_1e19_ana.root 3 onBNB 2387969 9.84e18
 #
 # Run 1 EXT off-beam data: run extBNB #triggers POT
-/exp/uboone/data/users/gardiner/ntuples-xsec-ana-tutorial-umn/xsec-ana-data_extbnb_mcc9.1_v08_00_00_25_reco2_C_all_reco2.root 1 extBNB 65498807 0
+/exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_beam_off_peleeTuple_uboone_v08_00_00_70_run3.root 3 extBNB 207167629 0
 #
 # Run 1 detector varation samples: run labelforDetVarType
-/exp/uboone/data/users/gardiner/ntuples-xsec-ana-tutorial-umn/xsec-ana-high_stat_prodgenie_bnb_nu_overlay_DetVar_Run1_CV_reco2_reco2.root 1 detVarCV
-/exp/uboone/data/users/gardiner/ntuples-xsec-ana-tutorial-umn/xsec-ana-high_stat_prodgenie_bnb_nu_overlay_DetVar_Run1_CV_reco2_reco2.root 1 detVarCVExtra
-/exp/uboone/data/users/gardiner/ntuples-xsec-ana-tutorial-umn/xsec-ana-high_stat_prodgenie_bnb_nu_overlay_DetVar_Run1_dEdx_reco2_reco2.root 1 detVarWMdEdx
-/exp/uboone/data/users/gardiner/ntuples-xsec-ana-tutorial-umn/xsec-ana-high_stat_prodgenie_bnb_nu_overlay_DetVar_Run1_LYAttenuation_reco2_reco2.root 1 detVarLYatten
-/exp/uboone/data/users/gardiner/ntuples-xsec-ana-tutorial-umn/xsec-ana-high_stat_prodgenie_bnb_nu_overlay_DetVar_Run1_LYDown_reco2_reco2.root 1 detVarLYdown
-/exp/uboone/data/users/gardiner/ntuples-xsec-ana-tutorial-umn/xsec-ana-high_stat_prodgenie_bnb_nu_overlay_DetVar_Run1_LYRayleigh_reco2_reco2.root 1 detVarLYrayl
-/exp/uboone/data/users/gardiner/ntuples-xsec-ana-tutorial-umn/xsec-ana-high_stat_prodgenie_bnb_nu_overlay_DetVar_Run1_Recombination_reco2_reco2.root 1 detVarRecomb2
-/exp/uboone/data/users/gardiner/ntuples-xsec-ana-tutorial-umn/xsec-ana-high_stat_prodgenie_bnb_nu_overlay_DetVar_Run1_SCE_reco2_reco2.root 1 detVarSCE
-/exp/uboone/data/users/gardiner/ntuples-xsec-ana-tutorial-umn/xsec-ana-high_stat_prodgenie_bnb_nu_overlay_DetVar_Run1_ThetaXZ_reco2_reco2.root 1 detVarWMAngleXZ
-/exp/uboone/data/users/gardiner/ntuples-xsec-ana-tutorial-umn/xsec-ana-high_stat_prodgenie_bnb_nu_overlay_DetVar_Run1_ThetaYZ_reco2_reco2.root 1 detVarWMAngleYZ
-/exp/uboone/data/users/gardiner/ntuples-xsec-ana-tutorial-umn/xsec-ana-high_stat_prodgenie_bnb_nu_overlay_DetVar_Run1_X_reco2_reco2.root 1 detVarWMX
-/exp/uboone/data/users/gardiner/ntuples-xsec-ana-tutorial-umn/xsec-ana-high_stat_prodgenie_bnb_nu_overlay_DetVar_Run1_YZ_reco2_reco2.root 1 detVarWMYZ
+/exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_CV_reprocess_ana.root 3 detVarCV
+/exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_CVExtra_reprocess_ana.root 3 detVarCVExtra
+/exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_LYAttenuation_reprocess_ana.root 3 detVarLYatten
+/exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_LYDown_reprocess_ana.root 3 detVarLYdown
+/exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_LYRayleigh_reprocess_ana.root 3 detVarLYrayl
+/exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_Recomb2_reprocess_ana.root 3 detVarRecomb2
+/exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_SCE_reprocess_ana.root 3 detVarSCE
+/exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_WireModThetaXZ_reprocess_ana.root 3 detVarWMAngleXZ
+/exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_WireModThetaYZ_reprocess_ana.root 3 detVarWMAngleYZ
+/exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_WireModX_reprocess_ana.root 3 detVarWMX
+/exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_bnb_nu_detvar_run3_WireModYZ_reprocess_ana.root 3 detVarWMYZ
 #
 # Run 1 central-value MC samples: run labelforCVMC
-/exp/uboone/data/users/gardiner/ntuples-xsec-ana-tutorial-umn/xsec-ana-prodgenie_bnb_dirt_overlay_mcc9.1_v08_00_00_26_run1_reco2_reco2.root 1 dirtMC
-/exp/uboone/data/users/gardiner/ntuples-xsec-ana-tutorial-umn/xsec-ana-prodgenie_bnb_intrinsice_nue_uboone_overlay_mcc9.1_v08_00_00_26_run1_reco2_reco2.root 1 nueMC
-/exp/uboone/data/users/gardiner/ntuples-xsec-ana-tutorial-umn/xsec-ana-prodgenie_bnb_nu_uboone_overlay_mcc9.1_v08_00_00_26_filter_run1_reco2_reco2.root 1 numuMC
+/exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_peleeTuple_uboone_v08_00_00_70_run3_dirt.root 3 dirtMC
+/exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_peleeTuple_uboone_v08_00_00_70_run3_nue.root 3 nueMC
+/exp/uboone/data/users/ahussain/post_processed_ntuples/stv_new_fw/stv_peleeTuple_uboone_v08_00_00_70_run3_nu.root 3 numuMC
 # Run 1 NuWro MC for fake data: run alternative-CV-label
-/exp/uboone/data/users/gardiner/ntuples-xsec-ana-tutorial-umn/xsec-ana-high_stat_prodgenie_bnb_nu_overlay_DetVar_Run1_NuWro_reco2_reco2.root 1 altCVMC
+#_NuWro_reco2_reco2.root 1 altCVMC
